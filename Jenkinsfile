@@ -24,6 +24,16 @@ pipeline {
         checkout scm
       }
     }
+       // Test Stage
+    stage('Test') {
+      agent {
+        label 'master'
+      }
+      steps {
+        deleteDir()
+        checkout scm
+      }
+    }
     // Static Code Analysis
     stage('Static Code Analysis') {
       agent {
